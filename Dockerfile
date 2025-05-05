@@ -1,4 +1,4 @@
 FROM alpine:latest
-COPY test /usr/local/bin/test
-RUN chmod +x /usr/local/bin/test
-CMD ["/usr/local/bin/test"]
+COPY cron /usr/local/bin/cron
+RUN chmod +x /usr/local/bin/cron
+CMD ["/usr/local/bin/cron"]

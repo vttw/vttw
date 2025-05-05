@@ -4,5 +4,4 @@ RUN apk update && \
 RUN update-ca-certificates
 COPY cron /usr/local/bin/cron
 RUN chmod +x /usr/local/bin/cron
-RUN /usr/local/bin/cron
-CMD ["tail", "-f", "/dev/null"]
+CMD ["/usr/local/bin/cron && tail -f /dev/null"]

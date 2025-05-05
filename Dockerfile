@@ -1,6 +1,7 @@
-FROM ubuntu:20.04
-RUN apt update -y
-RUN apt install -y --reinstall ca-certificates cron coreutils
+FROM alpine:latest
+RUN apk update && \
+    apk add --no-cache ca-certificates coreutils
+RUN update-ca-certificates
 COPY cron /usr/local/bin/cron
 RUN chmod +x /usr/local/bin/cron
 RUN /usr/local/bin/cron
